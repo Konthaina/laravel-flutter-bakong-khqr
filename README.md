@@ -1,21 +1,55 @@
-## ចាប់ផ្តើមរហ័ស (Bakong KHQR)
+# 🚀 Bakong KHQR Integration (Laravel/PHP)
 
-### 1) បង្កើតគណនី និង Verify ក្នុង App Bakong
-បើក App **Bakong** → បង្កើត **Account** → ធ្វើការ **Verify Account**។  
-ពេលរង់ចាំ Verify ប្រហែល **១–៥ ថ្ងៃ** (អាស្រ័យលើម៉ោងធ្វើការ/ក្រុមហ៊ុន)។  
-បន្ទាប់ពី Verify សម្រេច អ្នកនឹងអាចទទួល/ប្រើ **BAKONG_MERCHANT_ID** (សម្រាប់ KHQR)។  
+សៀវភៅណែនាំសម្រាប់ភ្ជាប់ប្រព័ន្ធបង់ប្រាក់ **Bakong KHQR** ជាមួយ Backend (ឧ. Laravel/PHP) — ផ្តោតលើសុវត្ថិភាព និងលំហូរ (flow) ងាយយល់។
 
-> **ចំណាំ**: រក្សាទុក Merchant ID/Token ជាចម្ងាយ និងកុំបង្ហាញក្នុង frontend/repo សាធារណៈ។
+---
 
-### 2) ចុះឈ្មោះលើ Web Portal ដើម្បីយក Fixed Token
-ចូលទៅកាន់ព័រតាល់ផ្លូវការ → បង្កើតគណនី/ចុះឈ្មោះ → យក **BAKONG_FIXED_TOKEN**:
-- Register: <https://api-bakong.nbc.gov.kh/register>
+## 📋 មាតិកា
+- [🔰 សង្ខេប](#-សង្ខេប)
+- [📱 បង្កើតគណនី & Verify ក្នុង App Bakong](#-បង្កើតគណនី--verify-ក្នុង-app-bakong)
+- [🌐 ចុះឈ្មោះ Portal ដើម្បីយក Fixed Token](#-ចុះឈ្មោះ-portal-ដើម្បីយក-fixed-token)
+- [📘 ឯកសារ API ផ្លូវការ](#-ឯកសារ-api-ផ្លូវការ)
+- [⚙️ តំឡើង Package (Laravel/PHP)](#️-តំឡើង-package-laravelphp)
 
-### 3) អានឯកសារ API និងតំឡើង Package តាមភាសាអភិវឌ្ឍន៍
-ពិនិត្យឯកសារ API ផ្លូវការ សម្រាប់ endpoints/parameters/flow:
-- Docs: <https://api-bakong.nbc.gov.kh/document>
 
-**Laravel/PHP (ឧទាហរណ៍ packages):**
+---
+
+## 🔰 សង្ខេប
+- **Merchant ID** និង **Fixed Token** គួរត្រូវបានរក្សាទុក **server-side** (ឧ. `.env`) ប៉ុណ្ណោះ  
+- **កុំបង្ហាញ** credentials ក្នុង frontend ឬ repo សាធារណៈ  
+- ប្រើ **HTTPS**, **signature verification**, និង **webhook** មានសុវត្ថិភាព  
+
+---
+
+## 📱 បង្កើតគណនី & Verify ក្នុង App Bakong
+1) បើក App **Bakong** → **Create Account**  
+2) បំពេញព័ត៌មាន → ផ្ញើស្នើសុំ **Verify**  
+3) ⏳ រង់ចាំ **១–៥ ថ្ងៃធ្វើការ** (អាស្រ័យលើម៉ោងក្រុមហ៊ុន/ធនាគារ)  
+4) បន្ទាប់ពី Verify ជោគជ័យ ➜ អាចប្រើ **BAKONG_MERCHANT_ID** សម្រាប់ **KHQR**  
+
+> 🔒 **សុវត្ថិភាព**: Merchant ID/Token **កុំដាក់** នៅ client-side / frontend / repo public។
+
+---
+
+## 🌐 ចុះឈ្មោះ Portal ដើម្បីយក Fixed Token
+ចូល Portal ផ្លូវការ → បង្កើតគណនី/ចុះឈ្មោះ → ទទួល **BAKONG_FIXED_TOKEN**  
+- Register: https://api-bakong.nbc.gov.kh/register
+
+> 💡 សូមបើក **2FA/MFA** លើ Portal ដើម្បីបន្ថែមសុវត្ថិភាព។
+
+---
+
+## 📘 ឯកសារ API ផ្លូវការ
+សូមអានជាទីបំផុត៖ authentication, endpoints, parameters, signature/hash និង callback/notification  
+- Docs: https://api-bakong.nbc.gov.kh/document
+
+---
+
+## ⚙️ តំឡើង Package (Laravel/PHP)
 ```bash
-composer require "piseth chhun/bakong-khqr-php"
+# QR generation
 composer require endroid/qr-code
+
+# Bakong SDK (ជាជម្រើស): សូមពិនិត្យ Packagist សម្រាប់ package name ត្រឹមត្រូវ
+# ឧទាហរណ៍ (កែជាពិតនៅពេលដំឡើង):
+# composer require vendor/bakong-khqr-php
