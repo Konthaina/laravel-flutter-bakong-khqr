@@ -47,9 +47,6 @@
 
 ## ⚙️ តំឡើង Package (Laravel/PHP)
 ```bash
-# QR generation
-composer require endroid/qr-code
 
-# Bakong SDK (ជាជម្រើស): សូមពិនិត្យ Packagist សម្រាប់ package name ត្រឹមត្រូវ
-# ឧទាហរណ៍ (កែជាពិតនៅពេលដំឡើង):
-# composer require vendor/bakong-khqr-php
+composer require endroid/qr-code
+composer require piseth chhun/bakong-khqr-php
