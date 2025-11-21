@@ -91,7 +91,6 @@ This project integrates Bakong KHQR with:
 1. Visit **Developer Portal**: https://api-bakong.nbc.gov.kh/register
 2. Create business account
 3. Generate **Fixed Token** (API Key)
-4. Enable **2FA/MFA** for security
 
 | Field | Purpose | Note |
 |-------|---------|------|
@@ -239,7 +238,6 @@ composer require piseth-chhun/bakong-khqr-php # Bakong KHQR library
 - **Log all transactions** for audit trail
 - **Use CORS** to restrict frontend origins
 - **Implement webhook verification** with IP whitelist
-- **Enable 2FA/MFA** on developer account
 - **Rotate API tokens** periodically
 - **Validate all user inputs** (amount, merchant name)
 
