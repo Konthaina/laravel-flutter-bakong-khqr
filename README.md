@@ -1,12 +1,11 @@
 # 🚀 Bakong KHQR POS System (Laravel + Flutter)
 
-សៀវភៅណែនាំសម្រាប់ភ្ជាប់ប្រព័ន្ធបង់ប្រាក់ **Bakong KHQR** ជាមួយ Backend (Laravel/PHP) និង Frontend (Flutter/Android) — ផ្តោតលើសុវត្ថិភាព និងលំហូរ (flow) ងាយយល់។
+A comprehensive guide for integrating the **Bakong KHQR** payment system with a Laravel backend and Flutter Android frontend. Focus on security, best practices, and seamless payment integration.
 
 ---
 
 ## 📋 Table of Contents
 
-### English
 - [Overview](#-overview)
 - [KHQR Standard](#khqr-standard)
 - [Account Setup](#account-setup)
@@ -14,10 +13,6 @@
 - [API Integration](#api-integration)
 - [Security Best Practices](#-security-best-practices)
 - [Documentation](#documentation-resources)
-
-### ខ្មែរ
-- [សង្ខេប](#សង្ខេប-1)
-- [ចុះឈ្មោះបង្កើតគណនី](#-បង្កើតគណនី--verify-ក្នុង-app-bakong)
 
 ---
 
@@ -289,22 +284,6 @@ if (!hash_equals($computed, $signature)) {
 ### Related Projects
 - **Python SDK**: https://github.com/bsthen/bakong-khqr
 - **Laravel QR Code**: `composer require endroid/qr-code`
-
----
-
-## សង្ខេប (Khmer Summary)
-
-### សុវត្ថិភាព
-- **រក្សាទុក Credentials ក្នុង `.env` ប៉ុណ្ណោះ** (Server-side)
-- **កុំលាតលិប Merchant ID និង Token នៅ Frontend ឬ Repository**
-- **ប្រើ HTTPS** សម្រាប់ទាំងអស់នៃ API Communication
-- **ផ្ទៀងផ្ទាត់ Webhook Signature** មុនដំណើរការ Payment
-
-### ដំណើរការ Bakong KHQR
-1. **បង្កើត Account** → Download Bakong App → Verify KYC
-2. **ដាក់ឈ្មោះ Developer** → Register at api-bakong.nbc.gov.kh → ទទួល Fixed Token
-3. **ក្រឹងមាន Laravel Backend** → Generate QR Codes → Verify Payments
-4. **ភ្ជាប់ Flutter App** → Scan QR → Process Payment
 
 ---
 
